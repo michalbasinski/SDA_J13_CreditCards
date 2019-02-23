@@ -7,7 +7,20 @@ public class CardIssuerDetector implements IDetector {
 
     @Override
     public String detect(String cardNo) {
-        return null;
+        String result = "Unknown";
+
+        //Algorytm pobiera bazę reguł
+        //przeprowadzana jest iteracja
+        //dokonane jest sprawdzenie czy numer karty zaczyna się od prefiksu i czy ma odpowiednią długość
+        for (IssuerRule rule : getIssuerRules()) {
+            if (cardNo.startsWith(rule.getPrefix())
+                    && cardNo.length() == rule.getLength()) {
+                result = rule.getName();
+                break;
+            }
+        }
+
+        return result;
     }
 
     private List<IssuerRule> getIssuerRules() {
