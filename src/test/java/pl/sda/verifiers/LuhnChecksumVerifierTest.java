@@ -8,11 +8,11 @@ import static org.junit.Assert.*;
 public class LuhnChecksumVerifierTest {
 
     @Test
-    public void shouldReturnTrueForNumber198011() {
+    public void shouldReturnFalseForNumber198011() {
         //given
         // dane wejściowe, oczekiwany wynik i obiekt poddawany testom
         final String number = "198011";
-        final boolean expectedResult = true;
+        final boolean expectedResult = false;
         IChecksumVerifier verifier = new LuhnChecksumVerifier();
 
         //when
@@ -25,10 +25,10 @@ public class LuhnChecksumVerifierTest {
     }
 
     @Test
-    public void shouldReturnFalseForNumber198010() {
+    public void shouldReturnTrueForNumber198010() {
         //given
         final String number = "198010";
-        final boolean expectedResult = false;
+        final boolean expectedResult = true;
         IChecksumVerifier verifier = new LuhnChecksumVerifier();
 
         //when
