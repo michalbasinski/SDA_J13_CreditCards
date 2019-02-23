@@ -2,8 +2,7 @@ package pl.sda.verifiers;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import pl.sda.verifiers.alternative.LuhnChecksumVerifierAltThree;
 
 public class LuhnChecksumVerifierTest {
 
@@ -30,6 +29,20 @@ public class LuhnChecksumVerifierTest {
         final String number = "198010";
         final boolean expectedResult = true;
         IChecksumVerifier verifier = new LuhnChecksumVerifier();
+
+        //when
+        boolean result = verifier.verify(number);
+
+        //then
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void shouldReturnTrueForNumber19802() {
+        //given
+        final String number = "19802";
+        final boolean expectedResult = true;
+        IChecksumVerifier verifier = new LuhnChecksumVerifierAltThree();
 
         //when
         boolean result = verifier.verify(number);
