@@ -1,0 +1,9 @@
+twórz program, który zidentyfikuje wystawcę karty oraz dokona sprawdzenia poprawności numeru przy wykorzystaniu algorytmu Luhna.
+Wymagane:
+- uzycie Mavena,
+- program umożliwia załadowanie danych o wystawcach/prefiksach z pliku,
+- metody sprawdzające wystawcę i poprawność numeru karty są testowane jednostkowo,
+- program jest w stanie sprawdzić, czy wczytywane reguły umożliwiają deterministyczne określenie wystawcy tzn. czy dwie reguły nie mają przypisanego tego samego prefiksu i liczby znaków.
+Mile widziane:
+- zastosowanie TDD,
+- wzorce projektowe.
