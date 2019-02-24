@@ -5,7 +5,7 @@ import pl.sda.verifiers.LuhnChecksumVerifier;
 
 public class CreditCardValidator {
 
-    public ValidationResult validate(String cardNumber) {
+    public ValidationResult validate(String cardNumber, String filePath) {
         ValidationResult result = new ValidationResult();
 
         //utworzenie nowego obiektu klasy CardIssuerDetector
