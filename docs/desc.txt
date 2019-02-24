@@ -1,4 +1,4 @@
-twórz program, który zidentyfikuje wystawcę karty oraz dokona sprawdzenia poprawności numeru przy wykorzystaniu algorytmu Luhna.
+1.Stwórz program, który zidentyfikuje wystawcę karty oraz dokona sprawdzenia poprawności numeru przy wykorzystaniu algorytmu Luhna.
 Wymagane:
 - uzycie Mavena,
 - program umożliwia załadowanie danych o wystawcach/prefiksach z pliku,
@@ -7,3 +7,9 @@ Wymagane:
 Mile widziane:
 - zastosowanie TDD,
 - wzorce projektowe.
+
+2. Zmodyfikuj kod w taki sposób, aby było możliwe podanie ścieżki do innego pliku z regułami.
+    - ścieżka ma być przekazywana jako parametr do metody main,
+    - plik może się znajdować w dowolnym miejscu na dysku,
+    - plik ma być użyty zamiast pliku w katalogu resources,
+    - jeśli nie zostanie podana ścieżka do pliku (jako parametr metody main), do budowy bazy reguł ma być użyty plik z katalogu /resources
