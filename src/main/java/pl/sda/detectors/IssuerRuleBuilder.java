@@ -9,13 +9,17 @@ import java.util.List;
 
 public class IssuerRuleBuilder {
 
-    public List<IssuerRule> buildIssuerRules() {
+    public List<IssuerRule> buildIssuerRules(String filePath) {
         List<IssuerRule> issuerRules = new ArrayList<>();
 
         String resourcePath = getClass()
                 .getClassLoader()
                 .getResource("issuers.csv")
                 .getPath();
+
+        if (filePath != null) {
+            resourcePath = filePath;
+        }
 
         //konstrukcja try-with-resources - bufferedReader/fileReader zostają zamknięte przez JVM w momencie błędu
         //więcej informacji - https://www.samouczekprogramisty.pl/konstrukcja-try-with-resources-w-jezyku-java/

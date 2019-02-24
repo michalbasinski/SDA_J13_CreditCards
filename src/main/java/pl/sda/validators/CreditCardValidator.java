@@ -11,7 +11,7 @@ public class CreditCardValidator {
         //utworzenie nowego obiektu klasy CardIssuerDetector
         //wpisanie wyniku metody detect do obiektu result
         CardIssuerDetector cardIssuerDetector = new CardIssuerDetector();
-        String issuerName = cardIssuerDetector.detect(cardNumber);
+        String issuerName = cardIssuerDetector.detect(cardNumber, filePath);
         result.setIssuerName(issuerName);
 
         //utworzenie nowego obiektu klasy LuhnChecksumVerifier

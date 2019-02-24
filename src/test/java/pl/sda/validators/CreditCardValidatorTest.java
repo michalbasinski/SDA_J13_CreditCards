@@ -22,7 +22,7 @@ public class CreditCardValidatorTest {
         CreditCardValidator validator = new CreditCardValidator();
 
         //when
-        ValidationResult result = validator.validate(cardNumber);
+        ValidationResult result = validator.validate(cardNumber, null);
 
         //then
         Assert.assertEquals(expectedIssuer, result.getIssuerName());
@@ -41,7 +41,7 @@ public class CreditCardValidatorTest {
         CreditCardValidator creditCardValidator = new CreditCardValidator();
 
         //when
-        ValidationResult result = creditCardValidator.validate(cardNumber);
+        ValidationResult result = creditCardValidator.validate(cardNumber, null);
 
         //then
         Assert.assertEquals(expectedResult, result);

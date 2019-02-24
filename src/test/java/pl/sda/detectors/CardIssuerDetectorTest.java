@@ -13,7 +13,7 @@ public class CardIssuerDetectorTest {
         final IDetector detector = new CardIssuerDetector();
 
         //when
-        String result = detector.detect(cardNumber);
+        String result = detector.detect(cardNumber, null);
 
         //then
         Assert.assertEquals(expectedResult, result);
@@ -27,7 +27,7 @@ public class CardIssuerDetectorTest {
         final IDetector detector = new CardIssuerDetector();
 
         //when
-        String result = detector.detect(cardNumber);
+        String result = detector.detect(cardNumber, null);
 
         //then
         Assert.assertEquals(expectedResult, result);
@@ -41,7 +41,7 @@ public class CardIssuerDetectorTest {
         final IDetector detector = new CardIssuerDetector();
 
         //when
-        String result = detector.detect(cardNumber);
+        String result = detector.detect(cardNumber, null);
 
         //then
         Assert.assertEquals(expectedResult, result);

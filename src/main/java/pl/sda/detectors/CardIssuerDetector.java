@@ -6,13 +6,13 @@ import java.util.List;
 public class CardIssuerDetector implements IDetector {
 
     @Override
-    public String detect(String cardNo) {
+    public String detect(String cardNo, String filePath) {
         String result = "Unknown";
 
         //Algorytm pobiera bazę reguł
         //przeprowadzana jest iteracja
         //dokonane jest sprawdzenie czy numer karty zaczyna się od prefiksu i czy ma odpowiednią długość
-        for (IssuerRule rule : getIssuerRules()) {
+        for (IssuerRule rule : getIssuerRules(filePath)) {
             if (cardNo.startsWith(rule.getPrefix())
                     && cardNo.length() == rule.getLength()) {
                 result = rule.getName();
@@ -23,7 +23,7 @@ public class CardIssuerDetector implements IDetector {
         return result;
     }
 
-    private List<IssuerRule> getIssuerRules() {
+    private List<IssuerRule> getIssuerRules(String path) {
 //        List<IssuerRule> issuerRules = new ArrayList<>();
 
 //        issuerRules.add(new IssuerRule("Visa", "4", 16));
@@ -36,7 +36,7 @@ public class CardIssuerDetector implements IDetector {
 //        issuerRules.add(new IssuerRule("American Express", "37", 15));
 
         IssuerRuleBuilder issuerRuleBuilder = new IssuerRuleBuilder();
-        return issuerRuleBuilder.buildIssuerRules();
+        return issuerRuleBuilder.buildIssuerRules(path);
     }
 
 }
