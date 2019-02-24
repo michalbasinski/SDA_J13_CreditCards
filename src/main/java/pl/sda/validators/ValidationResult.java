@@ -19,4 +19,14 @@ public class ValidationResult {
     public void setLuhnPassed(boolean luhnPassed) {
         isLuhnPassed = luhnPassed;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        ValidationResult comp = (ValidationResult) obj;
+
+        boolean areIssuerNamesEqual = issuerName.equals(comp.getIssuerName());
+        boolean areLuhnResultsEqual = isLuhnPassed == comp.isLuhnPassed;
+
+        return areIssuerNamesEqual && areLuhnResultsEqual;
+    }
 }
