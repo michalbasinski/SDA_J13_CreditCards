@@ -28,4 +28,22 @@ public class CreditCardValidatorTest {
         Assert.assertEquals(expectedIssuer, result.getIssuerName());
         Assert.assertTrue(result.isLuhnPassed());
     }
+
+    @Test
+    public void shouldReturnMasterCardAndTrueFor5149273068100605v2() {
+        //given
+        final String cardNumber = "5149273068100605";
+
+        final ValidationResult expectedResult = new ValidationResult();
+        expectedResult.setIssuerName("Master Card");
+        expectedResult.setLuhnPassed(true);
+
+        CreditCardValidator creditCardValidator = new CreditCardValidator();
+
+        //when
+        ValidationResult result = creditCardValidator.validate(cardNumber);
+
+        //then
+        Assert.assertEquals(expectedResult, result);
+    }
 }
