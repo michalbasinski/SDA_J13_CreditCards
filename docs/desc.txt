@@ -8,8 +8,15 @@ Mile widziane:
 - zastosowanie TDD,
 - wzorce projektowe.
 
+
 2. Zmodyfikuj kod w taki sposób, aby było możliwe podanie ścieżki do innego pliku z regułami.
-    - ścieżka ma być przekazywana jako parametr do metody main,
+
+    - ścieżka ma być przekazywana jako parametr do metody main
+      (w polu 'Program arguments' w oknie "Edit configurations"),
+
     - plik może się znajdować w dowolnym miejscu na dysku,
+
     - plik ma być użyty zamiast pliku w katalogu resources,
-    - jeśli nie zostanie podana ścieżka do pliku (jako parametr metody main), do budowy bazy reguł ma być użyty plik z katalogu /resources
+
+    - jeśli nie zostanie podana ścieżka do pliku (jako parametr metody main),
+      do budowy bazy reguł ma być użyty plik z katalogu /resources
