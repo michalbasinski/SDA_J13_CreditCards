@@ -1,22 +1,29 @@
+Opis programu:
+    Projekt SDA_J13_CreditCards to implementacja programu pozwalającego na przeanalizowanie numeru karty kredytowej. Analiza
+    numeru składa się z dwóch kroków:
+    - identyfikacji wystawcy karty,
+    - sprawdzenia poprawności numeru karty poprzez weryfikację cyfry kontrolnej z wykorzystaniem algorytmu Luhna.
+    Program podzielony jest na następujące pakiety/moduły:
+    - validators - pakiet z klasą zapewniającą metody służące do pełnej analizy numerów kart,
+    - detectors - zawiera interfejsy/klasy związane z identyfikacją wystawcy karty,
+    - verifiers - zawiera interfejsy/klasy obsługujące weryfkiację poprawności cyfry kontrolnej.
+    Najważniejszą klasą jest CardIssuerDetector wystawiająca metodę pozwalającą na pełną analizę numeru karty, która
+    przyjmuje jako parametry numer karty oraz ścieżkę do pliku z regułami (jeśli ścieżka do pliku będzie nullem, baza
+    reguł zostanie utworzona na bazie pliku issuers.csv w katalogu /src/main/resources.
+
 1.Stwórz program, który zidentyfikuje wystawcę karty oraz dokona sprawdzenia poprawności numeru przy wykorzystaniu algorytmu Luhna.
-Wymagane:
-- uzycie Mavena,
-- program umożliwia załadowanie danych o wystawcach/prefiksach z pliku,
-- metody sprawdzające wystawcę i poprawność numeru karty są testowane jednostkowo,
-- program jest w stanie sprawdzić, czy wczytywane reguły umożliwiają deterministyczne określenie wystawcy tzn. czy dwie reguły nie mają przypisanego tego samego prefiksu i liczby znaków.
-Mile widziane:
-- zastosowanie TDD,
-- wzorce projektowe.
-
-
+    Wymagane:
+    - uzycie Mavena,
+    - program umożliwia załadowanie danych o wystawcach/prefiksach z pliku,
+    - metody sprawdzające wystawcę i poprawność numeru karty są testowane jednostkowo,
+    - program jest w stanie sprawdzić, czy wczytywane reguły umożliwiają deterministyczne określenie wystawcy tzn. czy dwie reguły nie mają przypisanego tego samego prefiksu i liczby znaków.
+    Mile widziane:
+    - zastosowanie TDD,
+    - wzorce projektowe.
 2. Zmodyfikuj kod w taki sposób, aby było możliwe podanie ścieżki do innego pliku z regułami.
-
     - ścieżka ma być przekazywana jako parametr do metody main
       (w polu 'Program arguments' w oknie "Edit configurations"),
-
     - plik może się znajdować w dowolnym miejscu na dysku,
-
     - plik ma być użyty zamiast pliku w katalogu resources,
-
     - jeśli nie zostanie podana ścieżka do pliku (jako parametr metody main),
       do budowy bazy reguł ma być użyty plik z katalogu /resources

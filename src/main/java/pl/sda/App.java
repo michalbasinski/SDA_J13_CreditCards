@@ -5,6 +5,14 @@ import pl.sda.validators.ValidationResult;
 
 public class App
 {
+    /**
+     * Metodzie main należy przekazać parametry
+     * numer karty (wymagany, aby otrzymać rezulatat analizy),
+     * ścieżkę do pliku csv z regułami (jeśli nie zostanie przekazany zostanie użyty domyślny plik z katalogu /src/main/resources)
+     *
+     * Parametry należy przekazać korzystając z menu Run -> Edit configurations w polu Program arguments
+     * https://www.jetbrains.com/help/idea/setting-configuration-options.html
+     */
     public static void main( String[] args )
     {
         if (args != null && args.length > 0) {
