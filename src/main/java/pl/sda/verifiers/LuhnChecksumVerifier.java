@@ -1,7 +1,16 @@
 package pl.sda.verifiers;
 
+/**
+ * Implementacja interfejsu IChecksumVerifier wykorzystująca algorytm Luhna do sprawdzania porawności numeru karty.
+ */
 public class LuhnChecksumVerifier implements IChecksumVerifier {
 
+    /**
+     * Metoda sprawdzająca poprawność numeru karty z wykorzystaniem algorytmu Luhna.
+     *
+     * @param cardNumber numer karty do sprawdzenia
+     * @return wartość pokazująca czy numer jest poprawny (true/false)
+     */
     @Override
     public boolean verify(String cardNumber) {
 

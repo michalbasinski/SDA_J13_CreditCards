@@ -1,5 +1,8 @@
 package pl.sda.validators;
 
+/**
+ * Klasa dla obiektów transferowych przechowująca wyniki walidacji numeru karty oraz nazwę wystawcy.
+ */
 public class ValidationResult {
     private String issuerName;
     private boolean isLuhnPassed = false;
@@ -22,6 +25,9 @@ public class ValidationResult {
 
     @Override
     public boolean equals(Object obj) {
+        if (!(obj instanceof ValidationResult)) {
+            return false;
+        }
         ValidationResult comp = (ValidationResult) obj;
 
         boolean areIssuerNamesEqual = issuerName.equals(comp.getIssuerName());

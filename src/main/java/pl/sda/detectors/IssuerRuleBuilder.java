@@ -7,14 +7,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa budująca bazę reguł służących do identyfikacji wystawcy karty na bazie pliku CSV.
+ */
 public class IssuerRuleBuilder {
 
+    private static final String DEFAULT_FILE_NAME = "issuers.csv";
+    private static final String CSV_FILE_SEPARATOR = ";";
+
+    /**
+     * Metoda tworzy bazę reguł na bazie pliku
+     *
+     * @param filePath ścieżka do pliku CSV z regułami, jeśli zostanie przekazana wartość null
+     *                 zostanie użyty domyślny plik issuers.csv zlokalizowany w katalogu /src/main/resources
+     * @return nazwa wystawcy
+     */
     public List<IssuerRule> buildIssuerRules(String filePath) {
         List<IssuerRule> issuerRules = new ArrayList<>();
 
         String resourcePath = getClass()
                 .getClassLoader()
-                .getResource("issuers.csv")
+                .getResource(DEFAULT_FILE_NAME)
                 .getPath();
 
         if (filePath != null) {
@@ -42,7 +55,7 @@ public class IssuerRuleBuilder {
                     // 1. rozdzielenie linii na 3 wartości (średnik to separator)
                     // 2. stworzenie nowych obiektów klasy IssuerRule z wykorzystaniem konstruktora 3-argumentowego
                     // 3. dodanie nowego obiektu IssuerRule do listy issuerRules
-                    String[] tokens = line.split(";");
+                    String[] tokens = line.split(CSV_FILE_SEPARATOR);
                     IssuerRule issuerRule = new IssuerRule(tokens[0], tokens[1], Integer.parseInt(tokens[2]));
                     issuerRules.add(issuerRule);
                 }

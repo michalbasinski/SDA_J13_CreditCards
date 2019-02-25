@@ -1,5 +1,8 @@
 package pl.sda.detectors;
 
+/**
+ * Klasa reprezentująca regułę, używaną do przetwarzania numerów kart
+ */
 public class IssuerRule {
     private String name;
     private String prefix;

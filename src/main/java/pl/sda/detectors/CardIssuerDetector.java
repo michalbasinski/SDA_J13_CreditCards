@@ -1,10 +1,19 @@
 package pl.sda.detectors;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementacja detektora nazw wystawców kart kredytowych.
+ */
 public class CardIssuerDetector implements IDetector {
 
+    /**
+     * Metoda identyfikująca wystawcę karty na bazie numeru karty i bazy reguł.
+     *
+     * @param cardNo   numer karty do przetworzenia
+     * @param filePath ścieżka do pliku
+     * @return nazwa wystawcy
+     */
     @Override
     public String detect(String cardNo, String filePath) {
         String result = "Unknown";
