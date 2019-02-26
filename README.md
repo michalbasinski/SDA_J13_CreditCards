@@ -1,9 +1,11 @@
 # SDA_J13_CreditCards
-Opis programu:
+
+## Opis programu:
     Projekt SDA_J13_CreditCards to implementacja programu pozwalającego na przeanalizowanie numeru karty kredytowej. Analiza
     numeru składa się z dwóch kroków:
     - identyfikacji wystawcy karty,
     - sprawdzenia poprawności numeru karty poprzez weryfikację cyfry kontrolnej z wykorzystaniem algorytmu Luhna.
+
     Program podzielony jest na następujące pakiety/moduły:
     - validators - pakiet z klasą zapewniającą metody służące do pełnej analizy numerów kart,
     - detectors - zawiera interfejsy/klasy związane z identyfikacją wystawcy karty,
